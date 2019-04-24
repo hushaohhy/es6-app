@@ -72,3 +72,48 @@ console.log(obj_y)
 }
 
 // 对象解构的默认值
+// 默认值生效的条件 对象的属性值严格等于undefined
+{
+    let {x = 3} = {};
+    console.log(x)
+}
+{
+    let {x,y = 2} = {x:1}
+    console.log(x,y)
+}
+{
+    let {x:y=3} = {};
+    console.log(y)
+}
+{
+    let{x:y=5} = {x:1}
+    console.log(y)
+}
+{
+    let {x = 3} = {x:undefined}
+    console.log(x)
+}
+{
+    let {x = 3} = {x:null}
+    console.log(x)
+}
+
+// 3、字符串的解构赋值
+
+// 数组
+{
+    let [a,b,c,d,e] = 'hello';
+    console.log(a,b,c,d,e)// h e l l o
+}
+// 对象
+{
+    let {length: len} = 'hello'
+    console.log(len)// 5
+}
+
+// 4、数值和布尔值的解构赋值
+
+{
+    let {toString:s} = 123;
+    console.log(s)
+}
